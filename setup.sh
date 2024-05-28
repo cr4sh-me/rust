@@ -1,8 +1,22 @@
 #!/bin/bash
 
 RUST_PATH="/opt/cybertools/rust/lang"
-TOOLCHAIN="$(uname -m)-unknown-linux-gnu"
 TOOLCHAIN_VERSION="1.78.0"
+
+TARGET_ARCH="$(uname -m)"
+
+if [ "$TARGET_ARCH" == "aarch64" ]; then
+    FILE_ARCH="aarch64"
+elif  [ "$TARGET_ARCH" == "armv7l" ]; then
+    FILE_ARCH="armv7"
+elif [ "$TARGET_ARCH" == "armv6l" ]; then
+    FILE_ARCH="arm"
+else
+    echo "$TARGET_ARCH not supported yet!"
+    exit 1
+fi
+
+TOOLCHAIN="$FILE_ARCH-unknown-linux-gnu"
 
 rm -rf $RUST_PATH
 
