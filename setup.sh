@@ -9,8 +9,6 @@ if [ "$TARGET_ARCH" == "aarch64" ]; then
     TOOLCHAIN="aarch64-unknown-linux-gnu"
 elif  [ "$TARGET_ARCH" == "armv7l" ]; then
     TOOLCHAIN="armv7-unknown-linux-gnueabihf"
-elif [ "$TARGET_ARCH" == "armv6l" ]; then
-    TOOLCHAIN="arm-unknown-linux-gnueabihf"
 else
     echo "$TARGET_ARCH not supported yet!"
     exit 1
