@@ -1,7 +1,7 @@
 #!/bin/bash
 
 RUST_PATH="/opt/cybertools/rust/lang"
-TOOLCHAIN_VERSION="1.78.0"
+TOOLCHAIN_VERSION="1.77.0" # Use 1.77.0 to compile Ruby
 
 TARGET_ARCH="$(uname -m)"
 
